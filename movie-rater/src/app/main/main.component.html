@@ -1,0 +1,16 @@
+<button class="logout" mat-raised-button color="warn" (click)="logout()">Logout</button>
+
+<div class="layout">
+
+
+<app-movie-lest [movies]="movies" (selectMovie)="selectMovie($event)" (deletedMovie)="deletedMovie($event)"
+(editedMovie)="editMovie($event)" (createNewMovie)="createNewMovie()"
+></app-movie-lest>
+
+<div>
+    <app-movie-details [movie]="this.selectedMovie" (updateMovie)="selectMovie($event)"></app-movie-details>
+    <app-movie-form *ngIf="editedMovie" [movie]="this.editedMovie" (movieCreated)="movieCreated($event)" (movieUpdate)="movieUpdate($event)" ></app-movie-form>
+</div>
+
+
+</div>
